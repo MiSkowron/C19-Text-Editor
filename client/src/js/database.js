@@ -16,8 +16,8 @@ const initdb = async () =>
 export const putDb = async (content) => { 
   console.error('putDb not implemented');
 // console.log(content);
-const jDb = await openDB('jate', 1);
-  const tx = jDb.transaction('jate', 'readwrite');
+const jateDb = await openDB('jate', 1);
+  const tx = jateDb.transaction('jate', 'readwrite');
   const store = tx.objectStore('jate');
   const req = store.put({ content });
   const res = await req;
@@ -28,8 +28,8 @@ const jDb = await openDB('jate', 1);
 export const getDb = async () => { 
 console.error('getDb not implemented');
 console.log('getting all data from db');
-const jDb = await openDB('jate', 1);
-const tx = jDb.transaction('jate', 'readonly');
+const jateDb = await openDB('jate', 1);
+const tx = jateDb.transaction('jate', 'readonly');
 const store = tx.objectStore('jate');
 const req = store.getAll();
 const res = await req;
